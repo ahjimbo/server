@@ -20,7 +20,7 @@ public class HelloServerApplication {
 	@Autowired
 	DiscoveryClient client;
 
-	@Value("${MANAGED_IP}")
+	//@Value("${MANAGED_IP}")
 	private String key;
 
 	@RequestMapping("/")
