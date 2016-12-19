@@ -8,4 +8,4 @@ RUN sh -c 'touch /app.jar'
 RUN sh -c 'touch /env.sh'
 RUN chmod +x /env.sh
 ENV JAVA_OPTS=""
-ENTRYPOINT [ "sh", "-c", "source ./env.sh" ]
+ENTRYPOINT [ "sh", "-sc", "source ./env.sh" ]
