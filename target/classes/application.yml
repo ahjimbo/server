@@ -3,16 +3,16 @@ spring:
     name: HelloServer
   logging:
     file: /tmp/dev_app.log
+
 server:
-  port: 7111
+  port: 7112
 
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://eureka-server:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
   instance:
     leaseRenewalIntervalInSeconds: 10
     metadataMap:
       instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}
     preferIpAddress:  true
-    ip-address: ${MANAGED_IP}

@@ -20,13 +20,13 @@ public class HelloServerApplication {
 	@Autowired
 	DiscoveryClient client;
 
-	@Value("${MANAGED_IP}")
-	private String key;
+/*	@Value("${MANAGED_IP}")
+	private String key;*/
 
 	@RequestMapping("/")
 	public String hello() {
 		ServiceInstance localInstance = client.getLocalServiceInstance();
-		return key + " !!!Hello World: "+ localInstance.getServiceId()+":"+localInstance.getHost()+":"+localInstance.getPort();
+		return localInstance.getServiceId()+":"+localInstance.getHost()+":"+localInstance.getPort();
 	}
 
 	public static void main(String[] args) {
